@@ -1,7 +1,6 @@
 #include <BleKeyboard.h>
 
-BleKeyboard bleKeyboard;
-// ZZ change the name.
+BleKeyboard bleKeyboard("Glove KB", "Espressif", 100);
 
 // Pin layout from https://benjamin.computer/posts/2018-10-15-powerglove.html
 

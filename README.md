@@ -131,5 +131,5 @@ Arduino code is easier.
 2. Install `T-vK/ESP32-BLE-Keyboard` in Arduino IDE.
     1. https://github.com/T-vK/ESP32-BLE-Keyboard?tab=readme-ov-file#installation
 3. Flash the board.
-4. You should see a bluetooth device named `ESP Keyboard` ZZ change this.
+4. You should see a bluetooth device named `Glove KB`.
 5. Pair with it and then use the Power Glove buttons to perform actions.
