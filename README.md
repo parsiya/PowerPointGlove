@@ -1,7 +1,10 @@
 # PowerPoint Glove
-PowerPoint Glove presentation code for DEF CON 33 Hardware Hacking Village.
+Code for DEF CON 33 (2025) Creator Stages, organizedby the wonderful folks of
+the Hardware Hacking Village.
 
-Slides: ZZZ
+Slides: https://github.com/parsiya/Presentations/tree/main/defcon-33-power-glove/
+
+Also see [some random notes](notes.md).
 
 ## Hardware
 
@@ -28,7 +31,7 @@ winget install usbipd
 usbipd list
 ```
 
-You will see your board. It might be something like these choices:
+You will see your board. It might be like one of these choices:
 
 ```
 1-13   1a86:55d4  USB-Enhanced-SERIAL CH9102 (COM5)     Not shared
@@ -62,7 +65,7 @@ In WSL run `dmesg | tail` to see the name of the device. Usually `/dev/ttyACM0`
 or `/dev/ttyUSB0`.
 
 ## Building and Running
-Notice the pin out of the DB9 connector.
+Notice the pinout of the DB9 connector.
 
 ![](.images/db9.webp)
 
@@ -80,6 +83,19 @@ The code assumes the pins from the connector are connected to the following ESP3
 Modify the code accordingly for your board.
 
 Alternatively, you can also change the mappings in code.
+
+### Arduino Code
+Arduino code is easier.
+
+1. Install Arduino-ESP32 support
+    1. https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#installing-using-arduino-ide
+2. Install `TriDEntApollO/ESP32-BLE-Keyboard-V2` in Arduino IDE.
+    1. https://github.com/TriDEntApollO/ESP32-BLE-Keyboard-V2?tab=readme-ov-file#installation
+    2. Do not use the original version. Use this fork.
+3. Flash the board, you might have to hold the boot button while flashing.
+4. You should see a bluetooth device named `Glove KB`.
+5. Pair with it and then use the Power Glove buttons to perform actions.
+
 
 ### esp_hid_glove
 PowerGlove to Bluetooth Mouse or Keyboard. Based on
@@ -123,13 +139,3 @@ Now you can flash and monitor. Use the name you saw above in WSL logs.
 idf.py -p /dev/ttyUSB0|/dev/ttyACM0 flash monitor
 ```
 
-### Arduino Code
-Arduino code is easier.
-
-1. Install Arduino-ESP32 support
-    1. https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#installing-using-arduino-ide
-2. Install `T-vK/ESP32-BLE-Keyboard` in Arduino IDE.
-    1. https://github.com/T-vK/ESP32-BLE-Keyboard?tab=readme-ov-file#installation
-3. Flash the board.
-4. You should see a bluetooth device named `Glove KB`.
-5. Pair with it and then use the Power Glove buttons to perform actions.
